@@ -16,6 +16,7 @@ Git pre commit hooks, to be used with the (pre-commit)[pre-commit.com] framework
 * Create a `.pre-commit-config.yaml` file at the root of the repository and specify the hooks to use. Example:
 
 ```yaml
+---
 repos:
   - repo: https://github.com/timhourigan/pre-commit-hooks
     rev: 0.1.0
@@ -32,4 +33,11 @@ repos:
         args: [--settings-file=setup.cfg]        
         # Example - Pin to a specific version
         # additional_dependencies: [isort==5.7.0]
+```
+
+* Install the hook type (`pre-commit` for `commit` stages) and install the hooks
+
+```shell
+# From the root of the repository
+$ pre-commit install -t pre-commit --install-hooks
 ```

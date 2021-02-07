@@ -1,0 +1,13 @@
+---
+repos:
+  - repo: https://github.com/timhourigan/pre-commit-hooks
+    rev: 9236938e39f888cf7e07e5646d9aebf1bdf29917
+    hooks:
+      - id: black
+        stages: [commit]
+      - id: flake8
+        stages: [commit]
+        args: [--config=setup.cfg]
+      - id: isort
+        stages: [commit]
+        args: [--settings-file=setup.cfg]

@@ -1,18 +1,18 @@
 # Pre Commit Hooks
 
-Git pre commit hooks, to be used with the (pre-commit)[pre-commit.com] framework.
+Git pre commit hooks, to be used with the [pre-commit](pre-commit.com) framework.
 
 ## Hooks
 
 | Name   | Details                                                              | Stage(s) |
 |:-------|:---------------------------------------------------------------------|:---------|
-| black  | (black)[https://github.com/psf/black] - Python formatter             | commit   |
-| flake8 | (flake8)[https://flake8.pycqa.org/en/latest/] - Python style checker | commit   |
-| isort  | (isort)[https://pycqa.github.io/isort/] - Python import sorter       | commit   |
+| black  | [black](https://github.com/psf/black) - Python formatter             | commit   |
+| flake8 | [flake8](https://flake8.pycqa.org/en/latest/) - Python style checker | commit   |
+| isort  | [isort](https://pycqa.github.io/isort/) - Python import sorter       | commit   |
 
 ## Usage
 
-* Ensure `pre-commit` is installed (`python -m pip install --user pre-commit` or via (pipx)[https://github.com/pipxproject/pipx]
+* Ensure `pre-commit` is installed (`python -m pip install --user pre-commit` or via [pipx](https://github.com/pipxproject/pipx)
 * Create a `.pre-commit-config.yaml` file at the root of the repository and specify the hooks to use. Example:
 
 ```yaml

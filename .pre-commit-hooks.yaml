@@ -1,0 +1,26 @@
+---
+- id: black
+  name: black - Format Python
+  entry: black
+  types: [python]
+  language: python
+  language_version: python3
+  additional_dependencies: [black]
+  # Don't want to interfere with Black's parallel execution
+  require_serial: true
+- id: flake8
+  name: flake8 - Style Check Python
+  entry: flake8
+  types: [python]
+  language: python
+  language_version: python3
+  additional_dependencies: [flake8]
+  # Don't want to interfere with flake8's parallel execution
+  require_serial: true
+- id: isort
+  name: isort - Import Sort Python
+  entry: isort
+  types: [python]
+  language: python
+  language_version: python3
+  additional_dependencies: [isort]

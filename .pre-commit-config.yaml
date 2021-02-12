@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: https://github.com/timhourigan/pre-commit-hooks
-    rev: 9236938e39f888cf7e07e5646d9aebf1bdf29917
+    rev: 0.1.0
     hooks:
       - id: black
         stages: [commit]

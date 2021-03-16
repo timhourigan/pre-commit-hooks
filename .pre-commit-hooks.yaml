@@ -6,7 +6,7 @@
   language: python
   language_version: python3
   additional_dependencies: [black]
-  # Don't want to interfere with Black's parallel execution
+  # Don't want to interfere with black's parallel execution
   require_serial: true
 - id: flake8
   name: flake8 - Style Check Python
@@ -24,3 +24,8 @@
   language: python
   language_version: python3
   additional_dependencies: [isort]
+- id: shellcheck
+  name: shellcheck - Analyse shell scripts
+  entry: hooks/shellcheck/shellcheck.sh
+  types: [shell]
+  language: script

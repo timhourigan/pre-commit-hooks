@@ -1,25 +1,26 @@
 # Pre Commit Hooks
 
-Git pre commit hooks, to be used with the [pre-commit](pre-commit.com) framework.
+Git, client-side, pre-commit hooks, to be used with the [pre-commit](pre-commit.com) framework.
 
 ## Hooks
 
-| Name   | Details                                                              | Stage(s) |
-|:-------|:---------------------------------------------------------------------|:---------|
-| black  | [black](https://github.com/psf/black) - Python formatter             | commit   |
-| flake8 | [flake8](https://flake8.pycqa.org/en/latest/) - Python style checker | commit   |
-| isort  | [isort](https://pycqa.github.io/isort/) - Python import sorter       | commit   |
+| Name       | Details                                                                      | Stage(s) |
+|:-----------|:-----------------------------------------------------------------------------|:---------|
+| black      | [black](https://github.com/psf/black) - Python formatter                     | commit   |
+| flake8     | [flake8](https://flake8.pycqa.org/en/latest/) - Python style checker         | commit   |
+| isort      | [isort](https://pycqa.github.io/isort/) - Python import sorter               | commit   |
+| shellcheck | [shellcheck](https://github.com/koalaman/shellcheck) - Shell script analyser | commit   |
 
 ## Usage
 
-* Ensure `pre-commit` is installed (`python -m pip install --user pre-commit` or via [pipx](https://github.com/pipxproject/pipx)
+* Ensure `pre-commit` is installed (`python -m pip install --user pre-commit` or via [pipx](https://github.com/pipxproject/pipx))
 * Create a `.pre-commit-config.yaml` file at the root of the repository and specify the hooks to use. Example:
 
 ```yaml
 ---
 repos:
   - repo: https://github.com/timhourigan/pre-commit-hooks
-    rev: 0.1.0
+    rev: 0.2.0
     hooks:
       - id: black
         stages: [commit]
@@ -33,9 +34,13 @@ repos:
         args: [--settings-file=setup.cfg]        
         # Example - Pin to a specific version
         # additional_dependencies: [isort==5.7.0]
+     -  id: shellcheck
+        stages: [commit]
+        # Example - Exclude/ignore a specific error
+        # args: [--exclude, SC1000]
 ```
 
-* Install the hook type (`pre-commit` for `commit` stages) and install the hooks
+* Install the hook type in git (`pre-commit` for `commit` stages) and the hooks
 
 ```shell
 # From the root of the repository

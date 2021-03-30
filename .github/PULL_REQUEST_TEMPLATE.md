@@ -4,5 +4,5 @@
 
 ## Checklist
 
-- [ ] README.md updated
-- [ ] CHANGELOG.md updated
+- [] README.md updated
+- [] CHANGELOG.md updated

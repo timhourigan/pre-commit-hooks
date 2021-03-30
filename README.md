@@ -4,12 +4,13 @@ Git, client-side, pre-commit hooks, to be used with the [pre-commit](pre-commit.
 
 ## Hooks
 
-| Name       | Details                                                                      | Stage(s) |
-|:-----------|:-----------------------------------------------------------------------------|:---------|
-| black      | [black](https://github.com/psf/black) - Python formatter                     | commit   |
-| flake8     | [flake8](https://flake8.pycqa.org/en/latest/) - Python style checker         | commit   |
-| isort      | [isort](https://pycqa.github.io/isort/) - Python import sorter               | commit   |
-| shellcheck | [shellcheck](https://github.com/koalaman/shellcheck) - Shell script analyser | commit   |
+| Hook                                                                         | Stage(s) |
+|:-----------------------------------------------------------------------------|:---------|
+| [black](https://github.com/psf/black) - Python formatter                     | commit   |
+| [flake8](https://flake8.pycqa.org/en/latest/) - Python style checker         | commit   |
+| [isort](https://pycqa.github.io/isort/) - Python import sorter               | commit   |
+| [shellcheck](https://github.com/koalaman/shellcheck) - Shell script analyser | commit   |
+| [yamllint](https://github.com/adrienverge/yamllint) - YAML linter            | commit   |
 
 ## Usage
 
@@ -34,10 +35,14 @@ repos:
         args: [--settings-file=setup.cfg]        
         # Example - Pin to a specific version
         # additional_dependencies: [isort==5.7.0]
-     -  id: shellcheck
+      - id: shellcheck
         stages: [commit]
         # Example - Exclude/ignore a specific error
         # args: [--exclude, SC1000]
+      - id: yamllint
+        stages: [commit]
+        # Optional/Example - Specify configuration file
+        args: [--config-file=.yamllint]
 ```
 
 * Install the hook type in git (`pre-commit` for `commit` stages) and the hooks

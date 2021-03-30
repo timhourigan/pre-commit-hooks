@@ -29,3 +29,10 @@
   entry: hooks/shellcheck/shellcheck.sh
   types: [shell]
   language: script
+- id: yamllint
+  name: yamllint - YAML linter
+  entry: yamllint
+  types: [yaml]
+  language: python
+  language_version: python3
+  additional_dependencies: [yamllint]
